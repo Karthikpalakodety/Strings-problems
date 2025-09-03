@@ -2,20 +2,21 @@ import java.util.Scanner;
 
 public class ArrayCheck {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print(" Enter the number of elements in the array : ");
-        int size = sc.nextInt();
-        if (size == 0) {
-            System.out.println(" Array is empty.");
-        }
-        else {
-            int[] numbers = new int[size];
-            System.out.println(" Enter " + size + " elements : ");
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter size of the array : ");
+        int size = input.nextInt();
+        int[] arr = new int[size];
+        if (size > 0) {
+            System.out.println("Enter the elements : ");
             for (int i = 0; i < size; i++) {
-                numbers[i] = sc.nextInt();
+                arr[i] = input.nextInt();
             }
-            System.out.println(" The array is not empty. ");
         }
-        sc.close();
+        if (arr.length == 0) {
+            System.out.println("The array is empty.");
+        } else {
+            System.out.println("The array is not empty.");
+        }
+        input.close();
     }
 }
